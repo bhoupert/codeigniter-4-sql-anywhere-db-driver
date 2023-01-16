@@ -17,7 +17,7 @@ The SQL Anywhere PHP API Reference is available on https://help.sap.com/docs/SAP
 
 ### Step 1 - Add SQL Anywhere DB Driver
 
-Clone this projet in your existing CI4 project to add **_/system/database/SASQL/_** folder.
+Clone this project in your existing CI4 project to add **_/system/database/SASQL/_** folder.
 
 ### Step 2 - Add specific parameters
 
@@ -75,9 +75,9 @@ public array $tests = [
 
 _Some parameters can obviously be removed as they are not needed for SQL Anywhere connection._
 
-### Step 3 (optionnal) - Add connection parameters in .env
+### Step 3 (optional) - Add connection parameters in .env
 
-Edit **_/app/Config/Database.php_** file to add your connection parameters as following. The two specific parameters (_engine_ and _conAuth_) will be loaded by the driver and used to connect the SQL Anywhere database.
+Edit **_/app/Config/Database.php_** file to add your connection parameters as follows. The two specific parameters (_engine_ and _conAuth_) will be loaded by the driver and used to connect the SQL Anywhere database.
 
 ```ini
 database.default.hostname = 127.0.0.1
@@ -92,6 +92,16 @@ database.default.conAuth  = 'Company=xxx_companyName_xxx;Application=xxx_applica
 
 
 ## Some usage examples ##
+
+Some examples are based on manual connection (https://codeigniter.com/user_guide/database/connecting.html) :
+```php
+$db = \Config\Database::connect();
+```
+
+Other examples are based on implicit connection :
+```php
+$this->db->...
+```
 
 ### Basic queries ###
 ```php
