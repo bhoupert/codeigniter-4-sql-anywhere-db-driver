@@ -27,7 +27,7 @@ Clone this project in your existing CI4 project to add **_/app/database/SASQLDbD
 
 Run composer to add repository`.
 ```
-php composer.phar require bhoupert/codeigniter-4-sql-anywhere-db-driver
+composer require bhoupert/codeigniter-4-sql-anywhere-db-driver
 ```
 
 ### Step 2 - Add specific parameters
