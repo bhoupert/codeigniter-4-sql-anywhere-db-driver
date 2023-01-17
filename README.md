@@ -1,4 +1,7 @@
 # codeigniter-4-sql-anywhere-db-driver
+
+[![GitHub license](https://img.shields.io/badge/licence-GPL-blue)](https://github.com/bhoupert/codeigniter-4-sql-anywhere-db-driver/blob/main/LICENSE)
+
 SAP SQL Anywhere Database driver for CodeIgniter 4 (based on version 4.3.0, for PHP 7.4+)
 It allows you to use a SAP SQL Anywhere database in your CodeIgniter project.
 

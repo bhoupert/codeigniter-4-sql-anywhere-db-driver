@@ -1,0 +1,15 @@
+{
+  "name": "bhoupert/codeigniter-4-sql-anywhere-db-driver",
+  "description": "SAP SQL Anywhere Database driver for CodeIgniter 4.3.0",
+  "minimum-stability": "stable",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Baptiste Houpert",
+      "email": "houpert.baptiste@free.fr"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  }
+}
