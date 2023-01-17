@@ -1,15 +1,15 @@
 <?php
 
 /**
- * This file is part of CodeIgniter 4 framework.
+ * This file is part of codeigniter-4-sql-anywhere-db-driver.
  *
- * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ * (c) Baptiste HOUPERT <houpert.baptiste@free.fr>
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace CodeIgniter\Database\SASQL;
+namespace App\Database\SASQLDbDriver;
 
 use CodeIgniter\Database\BaseBuilder;
 use CodeIgniter\Database\Exceptions\DatabaseException;
@@ -21,7 +21,7 @@ use CodeIgniter\Database\ResultInterface;
  * Builder for SASQL
  *
  */
-class Builder extends BaseBuilder
+class Builder extends \CodeIgniter\Database\BaseBuilder
 {
     /**
      * ORDER BY random keyword

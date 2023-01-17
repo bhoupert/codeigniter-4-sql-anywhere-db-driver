@@ -1,15 +1,15 @@
 <?php
 
 /**
- * This file is part of CodeIgniter 4 framework.
+ * This file is part of codeigniter-4-sql-anywhere-db-driver.
  *
- * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ * (c) Baptiste HOUPERT <houpert.baptiste@free.fr>
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace CodeIgniter\Database\SASQL;
+namespace App\Database\SASQLDbDriver;
 
 use CodeIgniter\Database\BaseResult;
 use CodeIgniter\Entity\Entity;
@@ -18,14 +18,14 @@ use stdClass;
 /**
  * Result for SASQL
  */
-class Result extends BaseResult
+class Result extends \CodeIgniter\Database\BaseResult
 {
     /**
      * Gets the number of fields in the result set.
      */
     public function getFieldCount(): int
     {
-        return @sasql_num_fields($this->resultID);
+        return sasql_num_fields($this->resultID);
     }
 
     /**
@@ -35,12 +35,9 @@ class Result extends BaseResult
     {
         $fieldNames = [];
 
-        /*foreach (sasql_fetch_field($this->resultID) as $field) {
-            $fieldNames[] = $field['Name'];
-        }*/
         for ($i = 0; $i < sasql_num_fields($this->resultID); $i++) {
-            $fieldInfo      = sasql_fetch_field($this->resultID, $i);
-            $fieldNames[]   = $fieldInfo->name;
+            $fieldInfo    = sasql_fetch_field($this->resultID, $i);
+            $fieldNames[] = $fieldInfo->name;
         }
 
         return $fieldNames;

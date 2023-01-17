@@ -1,6 +1,5 @@
 # codeigniter-4-sql-anywhere-db-driver
 SAP SQL Anywhere Database driver for CodeIgniter 4 (based on version 4.3.0, for PHP 7.4+)
-
 It allows you to use a SAP SQL Anywhere database in your CodeIgniter project.
 
 ## Prerequisites ##
@@ -17,7 +16,7 @@ The SQL Anywhere PHP API Reference is available on https://help.sap.com/docs/SAP
 
 ### Step 1 - Add SQL Anywhere DB Driver
 
-Clone this project in your existing CI4 project to add **_/system/database/SASQL/_** folder.
+Clone this project in your existing CI4 project to add **_/app/database/SASQLDbDriver/_** folder.
 
 ### Step 2 - Add specific parameters
 
@@ -31,7 +30,7 @@ public array $default = [
 'username' => 'db_username',
 'password' => 'db_password',
 'database' => 'my_database',
-'DBDriver' => 'SASQL',
+'DBDriver' => 'App\Database\SASQLDbDriver',
 'DBPrefix' => '',
 'pConnect' => false,
 'DBDebug'  => true,
@@ -56,7 +55,7 @@ public array $tests = [
 'username'    => 'db_username',
 'password'    => 'db_password',
 'database'    => 'my_database',
-'DBDriver'    => 'SASQL',
+'DBDriver'    => 'App\Database\SASQLDbDriver',
 'DBPrefix'    => '',
 'pConnect'    => false,
 'DBDebug'     => true,
@@ -85,7 +84,7 @@ database.default.engine   = my_engine_name
 database.default.database = my_database
 database.default.username = db_username
 database.default.password = db_password
-database.default.DBDriver = SASQL
+database.default.DBDriver = App\Database\SASQLDbDriver
 database.default.port     = 2630
 database.default.conAuth  = 'Company=xxx_companyName_xxx;Application=xxx_application_xxx;Signature=__signature_hash__',
 ```
@@ -110,7 +109,7 @@ $query = $db->table('USERS')->get();
 
 echo '<pre>';
 print_r($query->getResult());
-echo '</pre>'
+echo '</pre>';
 ```
 
 ```php
