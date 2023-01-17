@@ -19,7 +19,16 @@ The SQL Anywhere PHP API Reference is available on https://help.sap.com/docs/SAP
 
 ### Step 1 - Add SQL Anywhere DB Driver
 
+#### With Git
+
 Clone this project in your existing CI4 project to add **_/app/database/SASQLDbDriver/_** folder.
+
+#### With Composer
+
+Run composer to add repository`.
+```
+php composer.phar require bhoupert/codeigniter-4-sql-anywhere-db-driver
+```
 
 ### Step 2 - Add specific parameters
 
