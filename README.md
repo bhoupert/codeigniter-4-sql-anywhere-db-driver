@@ -26,13 +26,14 @@ Clone this project in your existing CI4 project to add **_/app/database/SASQLDbD
 Run composer to add repository`.
 ```
 composer require bhoupert/codeigniter-4-sql-anywhere-db-driver
+composer update
 ```
 Then open  **_app/Config/Autoload.php_** and add the new _App\Database\SASQLDbDriver_ namespace :
 ```php
 public $psr4 = [
     APP_NAMESPACE                => APPPATH, // For custom app namespace
     'Config'                     => APPPATH . 'Config',
-    'App\Database\SASQLDbDriver' => ROOTPATH . 'vendor/bhoupert/codeigniter-4-sql-anywhere-db-driver/app/Database/SASQLDbDriver'
+    'App\Database\SASQLDbDriver' => ROOTPATH . 'vendor/bhoupert/codeigniter-4-sql-anywhere-db-driver/app/Database/SASQLDbDriver',
 ];
 ```
 
