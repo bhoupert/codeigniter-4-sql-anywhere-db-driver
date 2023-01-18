@@ -20,18 +20,23 @@ The SQL Anywhere PHP API Reference is available on https://help.sap.com/docs/SAP
 ### Step 1 - Add SQL Anywhere DB Driver
 
 #### With Git
-
 Clone this project in your existing CI4 project to add **_/app/database/SASQLDbDriver/_** folder.
 
 #### With Composer
-
 Run composer to add repository`.
 ```
 composer require bhoupert/codeigniter-4-sql-anywhere-db-driver
 ```
+Then open  **_app/Config/Autoload.php_** and add the new _App\Database\SASQLDbDriver_ namespace :
+```php
+public $psr4 = [
+    APP_NAMESPACE                => APPPATH, // For custom app namespace
+    'Config'                     => APPPATH . 'Config',
+    'App\Database\SASQLDbDriver' => ROOTPATH . 'vendor/bhoupert/codeigniter-4-sql-anywhere-db-driver/app/Database/SASQLDbDriver'
+];
+```
 
 ### Step 2 - Add specific parameters
-
 Edit **_/app/Config/Database.php_** file to add both _engine_ and _conAuth_ parameters in _$default_ var.
 ```php
 public array $default = [
@@ -87,9 +92,7 @@ public array $tests = [
 _Some parameters can obviously be removed as they are not needed for SQL Anywhere connection._
 
 ### Step 3 (optional) - Add connection parameters in .env
-
 Edit **_/app/Config/Database.php_** file to add your connection parameters as follows. The two specific parameters (_engine_ and _conAuth_) will be loaded by the driver and used to connect the SQL Anywhere database.
-
 ```ini
 database.default.hostname = 127.0.0.1
 database.default.engine   = my_engine_name
@@ -101,14 +104,11 @@ database.default.port     = 2630
 database.default.conAuth  = 'Company=xxx_companyName_xxx;Application=xxx_application_xxx;Signature=__signature_hash__',
 ```
 
-
 ## Some usage examples ##
-
 Some examples are based on manual connection (https://codeigniter.com/user_guide/database/connecting.html) :
 ```php
 $db = \Config\Database::connect();
 ```
-
 Other examples are based on implicit connection :
 ```php
 $this->db->...
